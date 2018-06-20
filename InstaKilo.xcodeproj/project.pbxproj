@@ -14,6 +14,7 @@
 		E0BD9D1A20DAC5FD00BACAAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD9D1920DAC5FD00BACAAF /* main.m */; };
 		E0BD9D2220DAC91500BACAAF /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD9D2120DAC91500BACAAF /* MyViewController.m */; };
 		E0BD9D2520DACAAC00BACAAF /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD9D2420DACAAC00BACAAF /* MyCollectionViewCell.m */; };
+		E0BD9D2B20DADC5100BACAAF /* Nature.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD9D2A20DADC5100BACAAF /* Nature.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E0BD9D2120DAC91500BACAAF /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		E0BD9D2320DACAAC00BACAAF /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		E0BD9D2420DACAAC00BACAAF /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		E0BD9D2920DADC5100BACAAF /* Nature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nature.h; sourceTree = "<group>"; };
+		E0BD9D2A20DADC5100BACAAF /* Nature.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nature.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				E0BD9D2120DAC91500BACAAF /* MyViewController.m */,
 				E0BD9D2320DACAAC00BACAAF /* MyCollectionViewCell.h */,
 				E0BD9D2420DACAAC00BACAAF /* MyCollectionViewCell.m */,
+				E0BD9D2920DADC5100BACAAF /* Nature.h */,
+				E0BD9D2A20DADC5100BACAAF /* Nature.m */,
 				E0BD9D1320DAC5FD00BACAAF /* Assets.xcassets */,
 				E0BD9D1520DAC5FD00BACAAF /* LaunchScreen.storyboard */,
 				E0BD9D1820DAC5FD00BACAAF /* Info.plist */,
@@ -149,6 +154,7 @@
 				E0BD9D1A20DAC5FD00BACAAF /* main.m in Sources */,
 				E0BD9D2220DAC91500BACAAF /* MyViewController.m in Sources */,
 				E0BD9D2520DACAAC00BACAAF /* MyCollectionViewCell.m in Sources */,
+				E0BD9D2B20DADC5100BACAAF /* Nature.m in Sources */,
 				E0BD9D0C20DAC5FC00BACAAF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

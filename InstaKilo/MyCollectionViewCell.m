@@ -7,7 +7,15 @@
 //
 
 #import "MyCollectionViewCell.h"
+#import "Nature.h"
+
+@interface MyCollectionViewCell()
+
+
+@end
 
 @implementation MyCollectionViewCell
+
+
 
 @end

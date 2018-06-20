@@ -18,24 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-7N-3R8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-7N-3R8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYO-iP-ed2">
-                                    <size key="itemSize" width="194" height="182"/>
+                                    <size key="itemSize" width="375" height="270"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kbe-Lb-kAA" customClass="MyCollectionViewCell">
-                                        <rect key="frame" x="90.5" y="0.0" width="194" height="182"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="194" height="182"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-47-VZw">
+                                                    <rect key="frame" x="0.0" y="-7" width="375" height="277"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="image" destination="Ly6-47-VZw" id="JKe-Zc-ZMc"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -45,6 +54,10 @@
                             <constraint firstItem="l3D-7N-3R8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ACk-Oo-8fg"/>
                             <constraint firstItem="l3D-7N-3R8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G5F-j7-gj7"/>
                             <constraint firstItem="l3D-7N-3R8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pt3-sc-iiG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l3D-7N-3R8" secondAttribute="bottom" id="R6H-Cc-2Rf"/>
+                            <constraint firstItem="l3D-7N-3R8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eKs-NC-ySB"/>
+                            <constraint firstItem="l3D-7N-3R8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kgs-Yn-Lh4"/>
+                            <constraint firstItem="l3D-7N-3R8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sNV-uw-apT"/>
                             <constraint firstItem="l3D-7N-3R8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zvu-mo-whP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
