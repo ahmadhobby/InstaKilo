@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyViewController.h
 //  InstaKilo
 //
 //  Created by Ahmad Hobby on 2018-06-20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MyViewController : UIViewController
 
 @end
-
