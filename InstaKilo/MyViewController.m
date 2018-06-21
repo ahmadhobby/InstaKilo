@@ -36,6 +36,7 @@
                         [[Nature alloc] initWithImage:[UIImage imageNamed:@"9.jpeg"] name:@"9"],
                         [[Nature alloc] initWithImage:[UIImage imageNamed:@"10.jpeg"] name:@"10"],
                         ];
+    
     self.photos = photos;
 }
 
