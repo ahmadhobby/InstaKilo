@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00602ED20DC2ED900135640 /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E00602EC20DC2ED900135640 /* MyHeaderView.m */; };
 		E0BD9D0C20DAC5FC00BACAAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BD9D0B20DAC5FC00BACAAF /* AppDelegate.m */; };
 		E0BD9D1220DAC5FC00BACAAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BD9D1020DAC5FC00BACAAF /* Main.storyboard */; };
 		E0BD9D1420DAC5FD00BACAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BD9D1320DAC5FD00BACAAF /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00602EB20DC2ED900135640 /* MyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
+		E00602EC20DC2ED900135640 /* MyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
 		E0BD9D0720DAC5FC00BACAAF /* InstaKilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaKilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD9D0A20DAC5FC00BACAAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0BD9D0B20DAC5FC00BACAAF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 				E0BD9D1020DAC5FC00BACAAF /* Main.storyboard */,
 				E0BD9D2020DAC91500BACAAF /* MyViewController.h */,
 				E0BD9D2120DAC91500BACAAF /* MyViewController.m */,
+				E00602EB20DC2ED900135640 /* MyHeaderView.h */,
+				E00602EC20DC2ED900135640 /* MyHeaderView.m */,
 				E0BD9D2320DACAAC00BACAAF /* MyCollectionViewCell.h */,
 				E0BD9D2420DACAAC00BACAAF /* MyCollectionViewCell.m */,
 				E0BD9D2920DADC5100BACAAF /* Nature.h */,
@@ -154,6 +159,7 @@
 				E0BD9D1A20DAC5FD00BACAAF /* main.m in Sources */,
 				E0BD9D2220DAC91500BACAAF /* MyViewController.m in Sources */,
 				E0BD9D2520DACAAC00BACAAF /* MyCollectionViewCell.m in Sources */,
+				E00602ED20DC2ED900135640 /* MyHeaderView.m in Sources */,
 				E0BD9D2B20DADC5100BACAAF /* Nature.m in Sources */,
 				E0BD9D0C20DAC5FC00BACAAF /* AppDelegate.m in Sources */,
 			);

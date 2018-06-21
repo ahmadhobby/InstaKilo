@@ -9,11 +9,17 @@
 #import "MyViewController.h"
 #import "MyCollectionViewCell.h"
 #import "Nature.h"
+#import "MyHeaderView.h"
 
 @interface MyViewController () <UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (nonatomic, strong) NSArray *photos;
+@property (nonatomic, strong) NSArray *subjects;
+@property (nonatomic, strong) NSArray<NSArray*>* photosBySubject;
+@property (nonatomic, strong) NSArray *locations;
+@property (nonatomic, strong) NSArray<NSArray*>* photosByLocation;
 
 @end
 
@@ -21,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.collectionView.dataSource = self;
     
     NSArray *photos = @[
@@ -37,26 +42,76 @@
                         [[Nature alloc] initWithImage:[UIImage imageNamed:@"10.jpeg"] name:@"10"],
                         ];
     
+    
+    // Creating an array of subjects and locations
+    
+    // Get the titles (headers of the sections) from this array
+    
+    NSArray* subjects = @[@"Forest", @"Park", @"Mountain"];
+    
+    // Getting the subjects correspond to the photos
+    
+    NSArray *photosBySubject = @[@[photos[0], photos[2], photos[7]],
+                                 @[photos[1], photos[3], photos[4], photos[6]],
+                                 @[photos[5], photos[8], photos[9]],
+                                 ];
+    
+    NSArray *locations = @[@"Brazil", @"Switzerland", @"Canada"];
+    NSArray *photosByLocation = @[@[photos[0], photos[3], photos[6]],
+                                  @[photos[9], photos[1], photos[4], photos[7]],
+                                  @[photos[2], photos[5], photos[9]],
+                                  ];
+    
     self.photos = photos;
+    self.subjects = subjects;
+    self.photosBySubject = photosBySubject;
+    self.locations = locations;
+    self.photosByLocation = photosByLocation;
+    
+    
+    
 }
 
+// make properties
+// implement number of sections
+// self.photosbysubject[iP.section][indexPath.item]
+
+// We applied this method to get the number of our sections
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.photosBySubject.count;
+}
+
+// We appled this method to get the number of items in each section
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.photos.count;
+    return self.photosBySubject[section].count;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-
+// We applied this method to create the cell
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    // data at the indexPath.row
-    // set the cell outlet to the data
-    Nature *nature = self.photos[indexPath.row];
+    
+    Nature *nature = self.photosBySubject[indexPath.section][indexPath.item];
     cell.image.image = nature.image;
     
     return cell;
     
     
 }
+
+// We applied this method to get the section headers
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        MyHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
+        NSString *sectionTitle = self.subjects[indexPath.section];
+        header.header.text = sectionTitle;
+        return header;
+    }
+    return nil;
+}
+
 @end
