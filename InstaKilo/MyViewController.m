@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSArray<NSArray*>* photosBySubject;
 @property (nonatomic, strong) NSArray *locations;
 @property (nonatomic, strong) NSArray<NSArray*>* photosByLocation;
+@property (nonatomic, strong) NSArray *sectionTitles;
+@property (nonatomic, strong) NSArray<NSArray*>* groupedPhotos;
 
 @end
 
@@ -68,9 +70,29 @@
     self.locations = locations;
     self.photosByLocation = photosByLocation;
     
+    self.sectionTitles = self.subjects;
+    self.groupedPhotos = self.photosBySubject;
     
     
 }
+
+//    Setting up the segmented control:
+
+
+- (IBAction)changeSections:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.sectionTitles = self.subjects;
+        self.groupedPhotos = self.photosBySubject;
+    } else {
+        self.sectionTitles = self.locations;
+        self.groupedPhotos = self.photosByLocation;
+    }
+    
+    // Resetting the data source
+    
+    [self.collectionView reloadData];
+}
+
 
 // make properties
 // implement number of sections
@@ -78,15 +100,16 @@
 
 // We applied this method to get the number of our sections
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return self.photosBySubject.count;
+    return self.groupedPhotos.count;
 }
 
 // We appled this method to get the number of items in each section
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.photosBySubject[section].count;
+    return self.groupedPhotos[section].count;
 }
 
 // We applied this method to create the cell
@@ -94,7 +117,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    Nature *nature = self.photosBySubject[indexPath.section][indexPath.item];
+    Nature *nature = self.groupedPhotos[indexPath.section][indexPath.item];
     cell.image.image = nature.image;
     
     return cell;
@@ -107,7 +130,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         MyHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-        NSString *sectionTitle = self.subjects[indexPath.section];
+        NSString *sectionTitle = self.sectionTitles[indexPath.section];
         header.header.text = sectionTitle;
         return header;
     }
